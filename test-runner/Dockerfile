@@ -1,7 +1,8 @@
 FROM openresty/openresty:centos
 
 RUN yum -y install \
-    perl-Test-Nginx
+    perl-Test-Nginx \
+    redis
 
 RUN adduser http
 
