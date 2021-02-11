@@ -4,9 +4,18 @@ RUN dnf -y install \
     epel-release
 
 RUN dnf -y --enablerepo=PowerTools install \
+    readline-devel \
     git \
     perl-Test-Nginx \
     redis
+
+RUN dnf -y groupinstall "Development Tools"
+
+RUN curl -R -O https://www.lua.org/ftp/lua-5.1.5.tar.gz; \
+  tar zxf lua-5.1.5.tar.gz; \
+  cd lua-5.1.5; \
+  make linux; \
+  make install
 
 RUN adduser http
 
