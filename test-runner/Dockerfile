@@ -1,9 +1,9 @@
-FROM openresty/openresty:1.17.8.2-5-centos
+FROM openresty/openresty:1.19.3.1-2-centos
 
 RUN dnf -y install \
     epel-release
 
-RUN dnf -y --enablerepo=PowerTools install \
+RUN dnf -y --enablerepo=powertools install \
     readline-devel \
     git \
     perl-Test-Nginx \
