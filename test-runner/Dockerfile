@@ -1,11 +1,11 @@
-FROM openresty/openresty:1.15.8.3-2-centos
+FROM openresty/openresty:1.17.8.2-5-centos
 
-RUN yum -y install epel-release
+RUN dnf -y install \
+    epel-release
 
-RUN yum -y install \
+RUN dnf -y --enablerepo=PowerTools install \
     git \
     perl-Test-Nginx \
-    perl-Digest-SHA \
     redis
 
 RUN adduser http
