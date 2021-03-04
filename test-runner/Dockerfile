@@ -20,6 +20,7 @@ RUN curl -R -O https://www.lua.org/ftp/lua-5.1.5.tar.gz; \
 RUN adduser http
 
 RUN luarocks install luacov; \
+    luarocks install luacheck; \
     luarocks install lua-resty-redis-connector; \
     luarocks install lua-resty-http; \
     luarocks install lua-resty-qless; \
